@@ -15,7 +15,8 @@ def predict():
     prediction = model.predict(final_features)
 
     output = {0: 'not placed', 1: 'placed'}
-
+    
+    # return flask.render_template('main.html', prediction_text=prediction[0])
     return flask.render_template('main.html', prediction_text='Student must be {} to workplace'.format(output[prediction[0]]))
     
 @app.route('/')
